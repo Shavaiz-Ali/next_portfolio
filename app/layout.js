@@ -1,3 +1,4 @@
+import { Navbar } from '@/components'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -11,7 +12,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="flex w-full min-h-screen gap-0 relative">
+          <Navbar />
+            <div className="absolute top-0 right-0 w-[calc(100vw-320px)] flex-1">
+                {children}
+            </div>
+        </div>
+      </body>
     </html>
   )
 }
